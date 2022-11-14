@@ -7,4 +7,4 @@ Como también mencionado, a continuación se indican dos sentencias SQL: la prim
 select * from ciudadanos where (nombre like 'Ped%' or nombre like 'San%') and length(apellido) < 15;
 
 **Toma en Cuenta Segundos Nombres**  
-select * from ciudadanos where (nombre like 'Ped%' or nombre like 'San%' or nombre like '% San%' or nombre like '% Ped%') and length(apellido) < 15
+select * from ciudadanos where (nombre like 'Ped%' or nombre like 'San%' or nombre like '% San%' or nombre like '% Ped%') and length(apellido) < 15;
