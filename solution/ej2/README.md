@@ -27,7 +27,7 @@ Para esta prueba se requerirá de dos cosas:
 - Página web [SQL Fiddle](http://www.sqlfiddle.com/)
 
 Una vez en la página web y con el archivo descargado, seguir las siguientes instrucciones:
-1. Hacer click en el botón `Test to DDL` en la parte superior de la página
+1. Hacer click en el botón `Text to DDL` en la parte superior de la página
 2. En el campo `Table Name` escribir `ciudadanos`
 3. En el campo inferior, copiar y pegar el contenido del archivo `listaPersonas100.csv` en su totalidad
 4. Hacer click en el botón `Append to DLL`
