@@ -1,7 +1,7 @@
 # Ejercicio 2 - README
 
 ## Tener en Cuenta
-Las consultas SQL formuladas para resolver el ejercicio fueron diseñadas para la gestión de base de datos de MySQL. Si bien su estructura es suficientemente génerica para que pueda ser utilizada bajo cualquier lenguaje de SQL, puede ocurrir, como sucede para SQL Server de Microsoft, está no funcione correctamente debido a la definición de la función LENGTH (llamada LEN en SQL Server y otros).
+Las consultas SQL formuladas para resolver el ejercicio fueron diseñadas para la gestión de base de datos de MySQL. Si bien su estructura es suficientemente génerica para que pueda ser utilizada bajo cualquier lenguaje de SQL, puede ocurrir, como sucede para SQL Server de Microsoft, que esta no funcione correctamente debido a la definición de la función LENGTH (llamada LEN en SQL Server y otros).
 
 ## Consultas SQL
 Para la resolución del ejercicio se ha tenido en cuenta la posibilidad de que el campo 'Nombre' en la tabla Ciudadanos pueda contener dos nombres. Para ello se han desarrollado dos consultas SQL: una que incluye a aquellos cuyo segundo nombre comienze con las letras especificadas ('Ped' o 'San') y otra que no.
@@ -23,17 +23,17 @@ Para probar el correcto funcionamiento de la consulta, se dispone de dos formas:
 
 ### Prueba Online (Reducida)
 Para esta prueba se requerirá de dos cosas:
-- Archivo *listaPersonas100.csv* encontrado en el directorio *ibm/resources*
+- Archivo `listaPersonas100.csv` encontrado en el directorio `ibm/resources`
 - Página web [SQL Fiddle](http://www.sqlfiddle.com/)
 
 Una vez en la página web y con el archivo descargado, seguir las siguientes instrucciones:
-1. Hacer click en el botón *Test to DDL* en la parte superior de la página
-2. En el campo *Table Name* escribir `ciudadanos`
-3. En el campo inferior, copiar y pegar el contenido del archivo *listaPersonas100.csv* en su totalidad
-4. Hacer click en el botón *Append to DLL*
-5. Hacer click en el botón *Build Schema*
+1. Hacer click en el botón `Test to DDL` en la parte superior de la página
+2. En el campo `Table Name` escribir `ciudadanos`
+3. En el campo inferior, copiar y pegar el contenido del archivo `listaPersonas100.csv` en su totalidad
+4. Hacer click en el botón `Append to DLL`
+5. Hacer click en el botón `Build Schema`
 6. Copiar y pegar en el segundo recuadro la consulta SQL deseada
-7. Hacer click en el botón *Run SQL*
+7. Hacer click en el botón `Run SQL`
 8. En la parte inferior de la página se podrá apreciar el resultado de las consultas
 
 ### Prueba Local
