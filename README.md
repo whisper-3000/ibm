@@ -22,12 +22,7 @@ A continuación, por cada ejercicio realizado se da una breve descripción de su
 ### Ejercicio 2
 Solución encontrada en: *solution/ej2*.
 
-Dentro de la carpeta se encuentra el archivo de texto *sql_query_ex2.txt*, el cuál contiene la consulta SQL pedida por el ejercicio.  
-En el directorio de *resources*, se encuentra un data set titulado *sqlDataSet.csv* que puede ser utilizado para probar el correcto funcionamiento de la consulta.
-
-**Tomar en Cuenta**  
-- La consulta fue hecha bajo la gestión de base de datos de MySQL, pero su estructura es génerica y puede ser utilizada bajo otros sistemas. SQL Server de Microsoft es una excepción ya que define una de las funciones utilizadas bajo otro nombre (LEN vs. LENGTH).
-- Se incluye y se explica dentro del archivo provisto, que existen dos consultas SQL: una toma en cuenta que el campo *nombre*, pude tener dos nombres, e incluye a aquellos cuyo segundo nombre también comience con las letras especificadas. La otra consulta ignora este detalle.
+Este directorio contiene únicamente un archivo README.md, el cuál explica la solución provista, y proporciona una manera simple y sencilla de poner a prueba la misma.
 
 ### Ejercicio 3
 Solución encontrada en *solution/ej3*.
