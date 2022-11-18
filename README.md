@@ -36,7 +36,7 @@ Al igual que en el ejercicio anterior, este directorio contiene únicamente un a
 El directorio contiene 3 archivos:
 - `teleCust1000t.csv`: Provisto por la prueba, es el data set de entrenamiento.
 - `knn.py`: Archivo Python que contiene la solución.
-- `README.md`: Archivo explicativo sobre la resolución del ejercicio, ejecución de la solución, y análisis de los resultados.
+- `README.md`: Archivo explicativo sobre la resolución del ejercicio y ejecución de la solución.
 
 ### Ejercicio 7
 
