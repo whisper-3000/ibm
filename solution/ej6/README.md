@@ -43,3 +43,5 @@ Si se selecciona el `INPUT_METHOD = 1`, se debe colocar en la misma carpeta que 
 Una vez de ejecute el módulo, este leera los registros dentro del archivo `input.csv` y predicirá sus valores 'custcat'. Una vez logrado, se generará en la misma carpeta un archivo `output.csv` con los registros más el valor estimado. 
 
 Luego, se mostrarán en pantalla los valores predecidos y se le preguntará al usuario si desea validarlos. De ser así, estos son guardados en el data set de entrenamiento para su futuro uso en predicciones.
+
+Para este caso, se encuentran en el directorio de `ibm/resources`, dos archivos para poner en prueba este uso. El primero es `input.csv`, el cual debe ser colocado en la misma carpeta que los otros archivos como indicado previamente. El otro es `output.csv`; los resultados del mismo fueron obtenidos usando `NUM_NEIGHBORS = 15` y `DISTANCE_TYPE = 0`.
