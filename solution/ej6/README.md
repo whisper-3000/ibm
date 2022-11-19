@@ -44,5 +44,5 @@ Además, se imprimirán en consola los valores obtenidos y se dará la opción d
 
 **Nota:** En el directorio `ibm/resources` se dispone de un archivo `input.csv` para probar este modo, y de un archivo `output.csv` para comprobar los valores predecidos. El segundo archivo fue generado con el número de vecinos de 10 y el tipo de distancia 0.
 
-### Usando `knn.py` como libería
+### Usando `knn.py` como librería
 Utilizando la sentencia `import knn` dentro de un archivo de Python que se encuentre dentro del mismo directorio, se puede hacer uso de las funciones del mismo.
