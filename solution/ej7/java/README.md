@@ -18,6 +18,6 @@ Con todo descargado, seguir los siguientes pasos:
 2. Abrir Postman
 3. Seleccionar el método GET
 4. Como dirección poner `http://localhost:8080/api/predict/custcat`
-5. En la sección de Body, colocar el registro cuyo valor 'custcat' se desea conocer en formato JSON
+5. En la sección de Body, seleccionar RAW, tipo JSON, y colocar el registro cuyo valor 'custcat' se desea conocer en formato JSON
 6. Enviar la solicitud
 7. Se debería de recibir el valor de 'custcat' deseado, o de lo contrario un comentario en cual fue el error
