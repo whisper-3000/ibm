@@ -3,45 +3,46 @@
 ## Solución
 La solución del ejercicio se encuentra dentro del archivo `knn.py`, que hace uso del archivo `teleCust1000t.csv`.
 
-Dentro de este archivo, se ha diseñado el algoritmo de [k-nearest-neighbor](https://es.wikipedia.org/wiki/K_vecinos_m%C3%A1s_pr%C3%B3ximos), el cual se utiliza para, acompañado por el data set provisto, predecir el dato 'custcat' de los usuarios ingresados.
+Dentro de este archivo, se ha diseñado el algoritmo de [k-nearest-neighbor](https://es.wikipedia.org/wiki/K_vecinos_m%C3%A1s_pr%C3%B3ximos), el cual se utiliza para, acompañado por el data set provisto, predecir el dato 'custcat' de los clientes.
 
 Para lograr esto se utilizaron tres funciones principales:
 - `distance`: Esta función, dado el tipo y dos registros, retorna la distancia especificada entre los dos registros. Se puede elegir entre la distancia [Euclidiana](https://es.wikipedia.org/wiki/Distancia_euclidiana) o la distancia [Manhattan](https://es.wikipedia.org/wiki/Geometr%C3%ADa_del_taxista).
 - `getNeighbors`: Dados un data set de entrenamiento, un registro, y la cantidad de vecinos deseados (configurable), retorna una lista con la cantidad de vecinos especificada que esten mas cerca del registro dado.
 - `predictCustcat`: Dados un data set de entramiento, un registro, y la cantidad de vecinos deseados (configurable), retorna la predicción del valor 'custcat' para el registro dado, basandose en el valor 'custcat' más "famoso" dentro de sus vecinos más cercanos.
 
-A través de estas funciones y de la lectura del data set dentro del archivo CSV provisto, el módulo predice el valor 'custcat' del registro ingresado y lo muestra en pantalla. A su vez, si el usuario válida el valor predecido, este se registra dentro del archivo `teleCust1000t.csv` para su uso en futuras predicciones. 
+A través de estas funciones y de la lectura del data set dentro del archivo CSV provisto, el módulo predice el valor 'custcat' del registro dado y lo retorna. A su vez, el usuario, haciendo uso de la función `persist_prediction` puede persistir las predicciones dentro del archivo `teleCust1000t.csv` para ser referenciadas en futuras predicciones. 
+
+Además, se presenta el diccionario `services` para traducir el dato predecido al nombre del servicio real. También se encuentra la función `formatCSV` que, dado una lista con los datos del un archivo CSV con las misma firma que el archivo `teleCust1000t.csv` devuelve la misma list pero con sus variables traducidas a números enteros (int).
 
 ## Modo de Prueba
-Para probar el correcto funcionamiento de la solución se necesitará de:
+
+### Archivo `test.py`
+Para esto se necesitará de:
 - [Python](https://www.python.org/downloads/)
-- Los archivos `knn.py` y `teleCust1000t.csv` encontrados en este directorio
+- Los archivos `knn.py`, `test.py` y `teleCust1000t.csv` encontrados en este directorio
 
-Una vez descargados, colocar los dos archivos de este directorio dentro de una misma carpeta y abrir una ventana de terminal dentro de la carpeta. Para ejecutar el módulo, correr el siguiente comando:
+Una vez descargados, colocar los tres archivos de este directorio dentro de una misma carpeta y abrir una ventana de terminal dentro de la carpeta. Para testear el módulo, correr el siguiente comando:
 ```
-python knn.py
+python test.py
 ```
 
-### Configuración
-Para configurar el módulo, abrir el archivo `knn.py` con cualquier editor de texto.
+Una vez se ejecute el comando, se mostrará en pantalla un breve saludo y se pedirá al usuario ingresar el tipo de input: *Manual* o *Por archivo CSV*.
 
-Una vez dentro, buscar la sección de `# CONFIGURACION`. Dentro de esta hay tres variables a modificar:
-- `NUM_NEIGHBORS`: Esta variable define la cantidad de vecinos a considerar a la hora de buscar los K vecinos más cercanos. Debe ser mayor a 0.
-- `DISTANCE_TYPE`: Esta variable determina el tipo de distancia a usar. 0 indica la distancia euclidiana, y 1 indica la distancia Manhattan.
-- `INPUT_METHOD`: Esta variable indica si se proveerán los registros a predecir uno por uno a mano a través de la consola, o si se proporcionará un archivo CSV con los registros. 0 indica uno a uno, y 1 indica por CSV. Esto se define mejor en las siguientes dos secciones.
+Cualquiera sea elegido, se le pedirá a continuación ingresar la cantidad de vecinos a tomar en cuenta y el tipo de distancia a utilizar. Con estos datos seleccionados, el funcionamiento se divide en dos dependiendo del tipo de input elegido:
 
-### 1 a 1
-Si se selecciona el `INPUT_METHOD = 0`, una vez se ejecute el módulo, se pedirá al usuario ingresar los datos del cliente cuyo valor de 'custcat' se desea predecir. Estos datos son los mismos que fueron proporcionados por el data set de entrenamiento. 
+#### Manual
+Si se escogió el modo manual, se pedirá a continuación ingresar los valores de cada campo, con su tipo indicado al lado. Una vez ingresados se imprime en pantalla la predicción obtenida.
 
-Una vez ingresados, el módulo muestra en pantalla el valor predecido. Luego, el usuario puede elegir si válidar la predicción o no. Si la válida, esta se registra dentro del data set de entrenamiento para teneral en cuenta en futuras predicciones.
+Aquí se da la opción de persistir el dato obtenido si así se desea, y de predecir el dato de otro cliente, en cual caso se vuelven a pedir los datos y se empieza de nuevo.
 
-Cualquiera sea la respuesta, el sistema pregunta al usuario si se desea predecir el valor 'custcat' de otro cliente. Si asi lo es, se repite la operación de ingreso de datos, validación de la predicción, y nuevamente se pregunta si se quiere continuar prediciendo. En caso contrario, el módulo termina.
+#### Por archivo CSV
+Si se escogiónel modo por archivo CSV, se debe colocar dentro del mismo directorio un archivo CSV `input.csv` con la misma firma que el archivo `teleCust1000t.csv` menos el dato 'custcat'. 
 
-### Archivo CSV
-Si se selecciona el `INPUT_METHOD = 1`, se debe colocar en la misma carpeta que los archivos `knn.py` y `teleCust1000t.csv`, un archivo llamada `input.csv`. Este debe contener los registros que se desean probar estructurados de la misma manera que aquellos provistos en el data set de entrenamiento, con la diferencia de que el valor 'custcat' este nulo.
+Cuando se ejecute el comando, el programa leerá este archivo y generará otro archivo CSV `output.csv` con los valores de 'custcat' predecidos agregados al registro de cada cliente.
 
-Una vez de ejecute el módulo, este leera los registros dentro del archivo `input.csv` y predicirá sus valores 'custcat'. Una vez logrado, se generará en la misma carpeta un archivo `output.csv` con los registros más el valor estimado. 
+Además, se imprimirán en consola los valores obtenidos y se dará la opción de persistirlos en el archivo `teleCust1000t.csv` para ser usados en futuras predicciones.
 
-Luego, se mostrarán en pantalla los valores predecidos y se le preguntará al usuario si desea validarlos. De ser así, estos son guardados en el data set de entrenamiento para su futuro uso en predicciones.
+**Nota:** En el directorio `ibm/resources` se dispone de un archivo `input.csv` para probar este modo, y de un archivo `output.csv` para comprobar los valores predecidos. El segundo archivo fue generado con el número de vecinos de 10 y el tipo de distancia 0.
 
-Para este caso, se encuentran en el directorio de `ibm/resources`, dos archivos para poner en prueba este uso. El primero es `input.csv`, el cual debe ser colocado en la misma carpeta que los otros archivos como indicado previamente. El otro es `output.csv`; los resultados del mismo fueron obtenidos usando `NUM_NEIGHBORS = 15` y `DISTANCE_TYPE = 0`.
+### Usando `knn.py` como libería
+Utilizando la sentencia `import knn` dentro de un archivo de Python que se encuentre dentro del mismo directorio, se puede hacer uso de las funciones del mismo.
