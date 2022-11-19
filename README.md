@@ -33,11 +33,13 @@ Al igual que en el ejercicio anterior, este directorio contiene únicamente un a
 ### Ejercicio 6
 `Solución encontrada en solution/ej6`
 
-El directorio contiene 3 archivos:
+El directorio contiene 4 archivos:
 - `teleCust1000t.csv`: Provisto por la prueba, es el data set de entrenamiento.
 - `knn.py`: Archivo Python que contiene la solución.
+- `test.py`: Archivo Python para el testeo de la solución.
 - `README.md`: Archivo explicativo sobre la resolución del ejercicio y ejecución de la solución.
 
 ### Ejercicio 7
+`Solución encontrada en solution/ej7`
 
-
+El directorio contiene 2 subdirectorios, `python` y `java`, cada uno con su propio archivo `README.md` donde se explica la manera de ejecutar cada solución.
