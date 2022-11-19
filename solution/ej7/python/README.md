@@ -10,7 +10,7 @@ pip install schema
 ```
 
 ## Solución
-La solución implementa un método GET con la firma `/api/predict/custcat`, que toma en el body un JSON con los datos que se desean predecir. De estos se verifica que sean del tipo requerido, que todos existan, y que el campo "marital" tenga como valor "married" o "single". En caso contrario se retorna un error HTTP 400 con un comentario adecuado.
+La solución implementa una API REST con un método GET con la firma `/api/predict/custcat`, que toma en el body un JSON con los datos que se desean predecir. De estos se verifica que sean del tipo requerido, que todos existan, y que el campo "marital" tenga como valor "married" o "single". En caso contrario se retorna un error HTTP 400 con un comentario adecuado.
 
 Además, se puede enviar dos parámetros: `num_neighbors` y `distance_type`. El primero especifica la cantidad de vecinos a tomar en cuentra, mientras que el otro especifica el tipo de distancia a utilizar. Ambos son opcionales, y si alguno no es provisto se usa como defecto los valores de '10' y '0' respectivamente.
 
