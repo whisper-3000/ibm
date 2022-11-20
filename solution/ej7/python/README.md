@@ -30,5 +30,5 @@ Una vez descargado todo, colocar los tres archivos de este directorio en una mis
 3. Seleccionar el método GET y como dirección colocar: `http://127.0.0.1:5000/api/predict/custcat`
 4. En la opción de Body seleccionar RAW y tipo JSON
 5. Escribir en el recuadro la figura JSON con los datos del cliente cuyo valor se desea predecir
-6. (Opcional) En la opción de Parámetros agregar 'num_neighbors' y/o 'distance_type' y asignarles valores aceptables
-7. Enviar la solicitud, se debería devolver el status HTTP 200 y el valor predecido
+6. **(Opcional)** En la opción de Parámetros agregar 'num_neighbors' y/o 'distance_type' y asignarles valores aceptables
+7. Enviar la solicitud, se debería devolver el status HTTP 200 y el valor predecido, o en su defecto un error con un mensaje explicativo
