@@ -21,7 +21,7 @@ SELECT * FROM ciudadanos WHERE (nombre LIKE 'Ped%' OR nombre LIKE 'San%' OR nomb
 ## Modo de Prueba
 Para probar el correcto funcionamiento de la consulta, se dispone de dos formas:
 
-### Prueba Online (Reducida)
+### Prueba Online
 Para esta prueba se requerirá de dos cosas:
 - Archivo `listaPersonas100.csv` encontrado en el directorio `ibm/resources`
 - Página web [SQL Fiddle](http://www.sqlfiddle.com/)
